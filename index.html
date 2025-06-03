@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <title>HTML-CSS</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="full-page">
-        <div class="navbar">
-            <div class="links">
-                <ul>
-                    <li class="homepage"><a href=""><span>HomePage</span></a></li>
-                    <li class="aboutme"><a href=""><span>About Me</span></a></li>
-                    <li class="contact"><a href=""><span>Contact</span></a></li>
-                </ul>
-            </div>
-            <div class="title">NickJ-Dev</div>
-            <div class="button">Google</div>
+      <div class="hero-grid">
+        <!-- <div class="hero-image"></div> -->
+        <div class="hero-text">
+          <h1 class="hero-title">Hi, My name is <span>Nick-J</span></h1>
+          <div class="box-hello" id="hello">Well hello there.</div>
         </div>
-        <div class="hero-grid">
-            <div class="hero-image">
-            </div>
-            <div class="hero-text">
-                <h1 class="hero-title">Hi, it's <span>NickJ-Dev</span></h1>
-                <p class="hero-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur aspernatur ratione beatae sint sed, animi itaque. Repellat nobis totam commodi! Vero earum rerum nisi et consequatur mollitia. Dolorum, laudantium reprehenderit.</p>
-            </div>
+        <div class="hero-desc">
+          <p class="hero-desc-1">
+            I am currently a Junior Developer, working on becoming a Senior at
+            GDS. I am learning React but creating this to brush up on my HTML
+            and CSS building block skills. It's been a lot of fun so far.
+          </p>
+          <p class="hero-desc-2">
+            Thank you for visiting <span class="emoji">😊</span>
+          </p>
         </div>
+      </div>
+      <div class="navbar">
+        <div class="title" id="title">NickJ-Dev</div>
+        <div class="links">
+          <ul>
+            <li class="homepage">
+              <a href=""><span>HomePage</span></a>
+            </li>
+            <li class="aboutme">
+              <a href=""><span>About Me</span></a>
+            </li>
+            <li class="contact">
+              <a href=""><span>Contact</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
+<script>
+  const button = document.getElementById("title");
+  $(button).on("click", function () {
+    $("#hello").toggle();
+  });
+</script>
