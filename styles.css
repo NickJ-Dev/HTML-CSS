@@ -121,7 +121,6 @@ body {
   color: white;
   text-shadow: 1px 1px 5px #f00;
   transform: scale(1.2);
-  text-shadow: ;
 }
 
 .hero-grid {
@@ -172,12 +171,14 @@ body {
 
 #hello {
   background-color: red;
-  display: none;
+  display: block;
 }
 
 .hero-desc-1,
 .hero-desc-2 {
-  width: 500px;
+  width: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
   font-size: 2rem;
 }
 
@@ -188,4 +189,76 @@ body {
 
 .hero-desc-2 .emoji:hover {
   transform: rotate(360deg);
+}
+
+@media (max-width: 430px) and (orientation: portrait) {
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+    height: 100%;
+  }
+  .full-page {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    height: calc(100vh - 134px);
+  }
+  .hero-title {
+    max-width: 90%;
+    text-align: center;
+  }
+  .hero-desc {
+    flex-grow: 2;
+  }
+  .hero-desc-1,
+  .hero-desc-2 {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 1rem;
+    font-size: 1.5rem;
+  }
+
+  .hero-desc-2 {
+    margin-top: 10px;
+  }
+  .navbar {
+    flex-direction: column;
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 1rem;
+  }
+  #title {
+    width: 50%;
+  }
+  .links {
+    width: 100%;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .element {
+    font-size: 1.2rem;
+    flex-direction: row;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .element {
+    font-size: 1.5rem;
+  }
 }
