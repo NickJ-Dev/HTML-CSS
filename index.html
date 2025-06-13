@@ -5,17 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
     <title>HTML-CSS</title>
   </head>
   <body>
     <div class="full-page">
+      <div class="navbar">
+        <div class="titles">
+          <div class="title" id="title">NickJ-Dev</div>
+          <div class="subtitle">Junior Web Developer</div>
+        </div>
+        <div>
+          <div class="links">
+            <ul>
+              <li class="homepage">
+                <a href=""><span>HomePage</span></a>
+              </li>
+              <li class="aboutme">
+                <a href=""><span>About Me</span></a>
+              </li>
+              <li class="contact">
+                <a href=""><span>Contact</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <div class="hero-grid">
         <!-- <div class="hero-image"></div> -->
+        <!-- <div class="marquee">
+              <div class="marquee-content">
+                <span>Marquee in CSS</span>
+                <span>Marquee in CSS</span>
+                <span>Marquee in CSS</span>
+                <span>Marquee in CSS</span>
+                <span>Marquee in CSS</span>
+                <span>Marquee in CSS</span>
+                <span>Marquee in CSS</span>
+              </div>
+            </div> -->
         <div class="hero-text">
           <h1 class="hero-title">Hi, My name is <span>Nick-J</span></h1>
           <!-- <div class="box-hello" id="hello">Well hello there.</div> -->
         </div>
-        <div class="hero-desc">
+        <!-- <div class="hero-desc">
           <p class="hero-desc-1">
             I am currently a Junior Developer, working on becoming a Senior at
             GDS. I am learning React but creating this to brush up on my HTML
@@ -24,30 +61,25 @@
           <p class="hero-desc-2">
             Thank you for visiting <span class="emoji">😊</span>
           </p>
-        </div>
-      </div>
-      <div class="navbar">
-        <div class="title" id="title">NickJ-Dev</div>
-        <div class="links">
-          <ul>
-            <li class="homepage">
-              <a href=""><span>HomePage</span></a>
-            </li>
-            <li class="aboutme">
-              <a href=""><span>About Me</span></a>
-            </li>
-            <li class="contact">
-              <a href=""><span>Contact</span></a>
-            </li>
-          </ul>
-        </div>
+          
+        </div> -->
       </div>
     </div>
   </body>
 </html>
-<!-- <script>
-  const button = document.getElementById("title");
-  $(button).on("click", function () {
-    $("#hello").toggle();
+<script>
+  $(document).ready(function (e) {
+    //position of element
+    var scroll_position = $("div.navbar").offset().top;
+    var scroll_activation_point = scroll_position;
+    $(window).on("scroll", function (e) {
+      var y_scroll_pos = window.pageYOffset;
+      var element_in_view = scroll_activation_point < y_scroll_pos;
+      if (element_in_view) {
+        $(".navbar").addClass("navbar-blur ");
+      } else {
+        $(".navbar").removeClass("navbar-blur ");
+      }
+    });
   });
-</script> -->
+</script>
